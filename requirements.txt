@@ -1,0 +1,15 @@
+langgraph==0.2.60
+langchain-core==0.3.49
+langchain-openai==0.3.11
+langchain-community==0.3.13
+langchain-pinecone==0.2.13
+pinecone==6.0.2
+langchain-tavily==0.2.0
+rank-bm25==0.2.2
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+streamlit==1.41.1
+python-dotenv==1.0.1
+pydantic==2.11.1
+requests==2.32.3
+ruff==0.17.0

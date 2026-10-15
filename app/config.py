@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_DIR = Path(__name__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
@@ -18,7 +18,7 @@ EMBEDDING_DIMENSION = 1536
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
 DATA_DIR = BASE_DIR / "data"
-FILLINGS_DIR = DATA_DIR / "fillings"
+FILINGS_DIR = DATA_DIR / "filings"
 
 
 if not OPENAI_API_KEY:

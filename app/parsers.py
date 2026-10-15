@@ -31,8 +31,8 @@ def parse_filing(file_path: Path) -> Document:
     text = re.sub(r"[ \t]{2,}", " ", text)
     text = text.strip()
 
-    # Taking only 40000 characters
-    text = text[:40000]
+    # Taking only 300000 characters
+    text = text[:300000]
 
     return Document(
         page_content=text,

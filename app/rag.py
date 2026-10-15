@@ -1,3 +1,5 @@
+import hashlib
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
@@ -127,7 +129,7 @@ def _dense_retrieve(query: str, k: int) -> list[Document]:
 
 
 def _sparse_retrieve(query: str, k: int) -> list[Document]:
-    global  _bm25_docs
+    global _bm25_docs
 
     if _bm25_index is None:
         _bm25_docs = load_chunks_from_disk()
@@ -155,9 +157,12 @@ def _reciprocal_rank_fusion(
     scores: dict[str, float] = {}
     doc_map: dict[str, Document] = {}
 
+    def _key(doc: Document) -> str:
+        return hashlib.md5(doc.page_content.encode("utf-8")).hexdigest()
+
     for ranked_list in (dense, sparce):
         for rank, doc in enumerate(ranked_list, start=1):
-            key = doc.page_content[:200]  # creating stable key with 200 chars
+            key = _key(doc)
             scores[key] = scores.get(key, 0.0) + 1.0 / (k + rank)
             doc_map[key] = doc
 

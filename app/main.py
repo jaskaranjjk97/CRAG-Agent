@@ -13,8 +13,12 @@ app = FastAPI(
     version="0.1.0",
 )
 
+# CORS — permissive for dev; tighten in production
 app.add_middleware(
-    CORSMiddleware(allow_origins="*", allow_methods="*", allow_headers="*")
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows specific domains
+    allow_methods=["*"],  # Allows all standard HTTP methods(GET<POST,etc.)
+    allow_headers=["*"],  # Allows all custom/standard HTTP headers
 )
 
 

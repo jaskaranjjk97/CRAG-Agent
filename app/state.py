@@ -13,9 +13,14 @@ class CRAGState(TypedDict, total=False):
 
     # Retrieval part
     query: str
+    original_query: str
     retrieved_docs: list[Document]
     graded_docs: list[dict]  # [{"doc":Document,"grade":"incorrect","score":0.80}]
     web_results: list[Document]
+
+    # Correction control
+    retry_count: int
+    web_search_used: bool
 
     # Generation
     final_response: str

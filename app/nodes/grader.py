@@ -22,15 +22,25 @@ Grades:
 - "ambiguous": The document is on-topic but only partially answers the
   query, or is missing the specific detail asked for.
 - "incorrect": The document is off-topic, OR it is about a different
-  company/entity/year than the query asks about.
+  company/entity/year than the query asks about, OR it is temporally
+  incompatible with the query.
 
 Rules:
 - Grade against the SPECIFIC query, not general topical similarity.
 - Entity match matters. If the query is about Tesla and the document is
   from Apple's 10-K, grade it "incorrect" — even if the topic matches.
+- Temporal match matters. A 10-K filing is a historical document frozen
+  at its filing date. If the query asks about "today", "current", "now",
+  "recent", "latest", or a future date, the filing CANNOT answer it —
+  grade as "incorrect" regardless of how relevant the topic appears.
+  Historical stock prices in a filing do NOT answer a query about today's
+  stock price.
 - Filings are long and repetitive across companies. "Risk factors" appears
   in every 10-K, so topical similarity alone is not enough.
 - Return a relevance score (0-1) with the grade and a one-sentence reason.
+- If the query asks about a specific historical date or year that the
+  filing covers, grade the document normally — the temporal rule only
+  applies to present-tense queries ("today", "current", "now").
 """
 
 

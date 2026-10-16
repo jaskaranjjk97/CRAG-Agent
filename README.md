@@ -60,13 +60,13 @@ The grader marked some chunks `correct`, so the pipeline routed straight to gene
 
 ### Web fallback — no relevant local content
 
-![Web fallback](docs/02-web-fallback.png)
+![Web fallback](docs/02-web_fallback.png)(docs/03-web_fallback_exp.png)
 
 When the query asks about something not in the filings (like today's stock price), the router falls back to Tavily. The trace lists real URLs from the search results.
 
 ### Rewrite loop — self-correction in action
 
-![Rewrite loop](docs/03-rewrite-loop.png)
+![Rewrite loop](docs/05-rewrite_query.png)(docs/05-rewrite_query_exp.png)
 
 For queries the filings simply can't answer, the pipeline rewrites the query up to two times, then falls back to web. The UI shows the original vs. rewritten query side by side.
 

@@ -1,12 +1,41 @@
 # CRAG Agent
 
-> A Corrective RAG pipeline over SEC 10-K filings. Hybrid retrieval, LLM-as-judge grading, web fallback via Tavily, and query rewriting — with a transparent trace of every correction step.
+> "A RAG system that knows when it doesn't know. Grades every retrieved document, falls back to web search when local knowledge is insufficient, and refuses to hallucinate."
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.2.60-blueviolet.svg)](https://github.com/langchain-ai/langgraph)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.6-009688.svg)](https://fastapi.tiangolo.com/)
 [![RAGAS](https://img.shields.io/badge/Eval-RAGAS-orange.svg)](https://docs.ragas.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+## The problem this solves
+
+Naive RAG answers questions by retrieving documents that are *topically similar* to the query. That's fine until it isn't — because "similar" is not the same as "actually answers the question." A filing about Tesla's risk factors looks nearly identical to one about Apple's. A 2024 10-K can't tell you today's stock price. A search for "revenue" surfaces ten chunks and none of them contain the number you asked for.
+
+Most RAG systems just pass the retrieved chunks to an LLM and hope. When the chunks are wrong, the LLM either hallucinates, hedges, or gives an answer from the wrong company.
+
+This project fixes that by adding a **grading layer** between retrieval and generation: every retrieved document is scored by an LLM-as-judge, and the score drives whether the system generates, searches the web, or rewrites the query. The system knows when it doesn't know.
+
+## Who this is for
+
+- **Financial analysts** who need fast, cited answers from SEC filings without opening the 100-page PDF
+- **Support teams** building a chatbot over internal documentation that can't afford to hallucinate
+- **Product teams** building a "chat with your docs" feature where the documents are heterogeneous (mixed formats, conflicting sources)
+- **Anyone building production RAG** who needs retrieval quality to be measurable, not vibes
+
+## How this compares to naive RAG
+
+On 15 verified questions over 3 SEC filings, this pipeline improves **context precision by 19%** by filtering out irrelevant documents before generation. Full evaluation, methodology, and per-question results are in [`eval/comparison.md`](eval/comparison.md).
+
+## What I can build for you
+
+This project is a template. The same architecture applies to:
+- Chatbots over company documentation (Notion, Confluence, PDFs)
+- Support agents that escalate to humans when needed
+- Analyst tools that answer questions with citations
+- Any RAG system where hallucination is expensive
+
+**Contact:** [jaskaranjandu4u@gmail.com](mailto:jaskaranjandu4u@gmail.com) · [LinkedIn](https://www.linkedin.com/in/jaskaran-singh-0a65b3181) · [Upwork profile](https://www.upwork.com/freelancers/~01aa522afc2d9a802d)
 
 ---
 

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.git/
+.gitignore
+.pytest_cache/
+.ruff_cache/
+logs/
+*.log
+docs/
+eval/*.csv
+eval/eval_*_run*.csv

@@ -70,7 +70,7 @@ When the query asks about something not in the filings (like today's stock price
 
 ![Rewrite loop — query banner and rewrite step](docs/05-rewrite_query.png)
 
-![Rewrite loop — trace showing two rewrite iterations](docs/05-rewrite_query_exp.png)
+![Rewrite loop — trace showing two rewrite iterations](docs/06-rewrite_query_exp.png)
 
 For queries the filings simply can't answer, the pipeline rewrites the query up to two times, then falls back to web. The UI shows the original vs. rewritten query side by side.
 

@@ -54,7 +54,7 @@ This project is a template. The same architecture applies to:
 
 ### Direct generation — correct chunks exist
 
-![Direct generation](docs/01-direct-generate.png)
+![Direct generation](docs/01-direct_generate.png)
 
 The grader marked some chunks `correct`, so the pipeline routed straight to generation. The right panel shows the grade distribution and per-document reasoning.
 

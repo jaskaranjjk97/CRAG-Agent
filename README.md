@@ -1,6 +1,6 @@
 # CRAG Agent
 
-> "A RAG system that knows when it doesn't know. Grades every retrieved document, falls back to web search when local knowledge is insufficient, and refuses to hallucinate."
+> A RAG system that knows when it doesn't know. Grades every retrieved document, falls back to web search when local knowledge is insufficient, and refuses to hallucinate.
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.2.60-blueviolet.svg)](https://github.com/langchain-ai/langgraph)
@@ -52,29 +52,31 @@ This project is a template. The same architecture applies to:
 
 ## Screenshots
 
-### Direct generation — correct chunks exist
+### 1 · Direct generation — correct chunks exist
 
-![Direct generation](docs/01-direct_generate.png)
+![Direct generation — grader chips and trace panel](docs/01-direct_generate.png)
 
 The grader marked some chunks `correct`, so the pipeline routed straight to generation. The right panel shows the grade distribution and per-document reasoning.
 
-### Web fallback — no relevant local content
+### 2 · Web fallback — no relevant local content
 
-![Web fallback](docs/02-web_fallback.png)
-![Web fallback](docs/03-web_fallback_exp.png)
+![Web fallback — chat view with fallback response](docs/02-web_fallback.png)
+
+![Web fallback — trace panel showing Tavily URLs](docs/03-web_fallback_exp.png)
 
 When the query asks about something not in the filings (like today's stock price), the router falls back to Tavily. The trace lists real URLs from the search results.
 
-### Rewrite loop — self-correction in action
+### 3 · Rewrite loop — self-correction in action
 
-![Rewrite loop](docs/05-rewrite_query.png)
-![Rewrite loop](docs/05-rewrite_query_exp.png)
+![Rewrite loop — query banner and rewrite step](docs/05-rewrite_query.png)
+
+![Rewrite loop — trace showing two rewrite iterations](docs/05-rewrite_query_exp.png)
 
 For queries the filings simply can't answer, the pipeline rewrites the query up to two times, then falls back to web. The UI shows the original vs. rewritten query side by side.
 
-### FastAPI — interactive API docs
+### 4 · FastAPI — interactive API docs
 
-![Swagger UI](docs/04-swagger.png)
+![FastAPI Swagger UI](docs/04-swagger.png)
 
 FastAPI auto-generates Swagger UI at `/docs`. Both endpoints (`POST /chat` and `GET /health`) are testable from the browser.
 
@@ -355,10 +357,12 @@ CRAG-Agent/
 ├── ui/
 │   └── streamlit_app.py         # chat + pipeline trace panel
 ├── docs/
-│   ├── 01-direct-generate.png
-│   ├── 02-web-fallback.png
-│   ├── 03-rewrite-loop.png
-│   └── 04-swagger.png
+│   ├── 01-direct_generate.png
+│   ├── 02-web_fallback.png
+│   ├── 03-web_fallback_exp.png
+│   ├── 04-swagger.png
+│   ├── 05-rewrite_query.png
+│   └── 05-rewrite_query_exp.png
 ├── Dockerfile                   # backend image
 ├── Dockerfile.ui                # UI image
 ├── docker-compose.yml           # orchestration

@@ -9,9 +9,10 @@ Use ONLY the provided context to answer the query. If the context does not
 contain enough information, say so clearly — do not make up facts.
 
 Rules:
-- Cite the source of each claim inline (e.g., "According to apple-10k-2024.htm, ...").
+- Cite the source of each claim using bracketed numbers that match the
+  context blocks, e.g., "Microsoft employed 228,000 people [1]."
+- Do NOT include filenames or URLs inline in the answer text.
 - If sources conflict, note the conflict rather than picking one silently.
-- If the context is web results, cite the URL.
 - Keep answers short and direct. No filler.
 """
 

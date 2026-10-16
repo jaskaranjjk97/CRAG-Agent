@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What was Apple's total net sales in 2024?",
+    "ground_truth": "Apple's total net sales in 2024 were $391,035 million."
+  },
+  {
+    "question": "How many full-time employees does Microsoft have?",
+    "ground_truth": "Microsoft employed approximately 228,000 people on a full-time basis as of June 30, 2024."
+  },
+  {
+    "question": "What was Microsoft's total revenue in fiscal year 2024?",
+    "ground_truth": "Microsoft's revenue for fiscal year 2024 was $245,122 million."
+  },
+  {
+    "question": "What was Tesla's total revenue in 2024?",
+    "ground_truth": "Tesla's total revenue in 2024 was $97,690 million."
+  },
+  {
+    "question": "What are Tesla's main risk factors?",
+    "ground_truth": "Tesla's main risk factors include market competition, negative publicity, employee retention challenges, and supply chain dependencies."
+  },
+  {
+    "question": "What products does Apple sell?",
+    "ground_truth": "Apple sells iPhone, Mac, iPad, Wearables/Home/Accessories, and Services."
+  },
+  {
+    "question": "Where is Apple headquartered?",
+    "ground_truth": "Apple is headquartered in Cupertino, California."
+  },
+  {
+    "question": "What was Apple's iPhone revenue in 2024?",
+    "ground_truth": "Apple's iPhone revenue in 2024 was $201,183 million."
+  },
+  {
+    "question": "What segments does Microsoft report?",
+    "ground_truth": "Microsoft reports three segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing."
+  },
+  {
+    "question": "What was Microsoft's year-over-year revenue growth rate?",
+    "ground_truth": "Microsoft's revenue grew 16% year-over-year in fiscal year 2024."
+  },
+  {
+    "question": "How many employees does Tesla have?",
+    "ground_truth": "Tesla had approximately 125,665 employees as of December 31, 2024."
+  },
+  {
+    "question": "What was Apple's services revenue in 2024?",
+    "ground_truth": "Apple's Services revenue in 2024 was $96,169 million."
+  },
+  {
+    "question": "What is Microsoft's main cloud product?",
+    "ground_truth": "Microsoft's main cloud product is Microsoft Azure."
+  },
+  {
+    "question": "What was Tesla's gross margin in 2024?",
+    "ground_truth": "Tesla's gross margin in 2024 was approximately 17.9%."
+  },
+  {
+    "question": "What was Apple's revenue growth from 2023 to 2024?",
+    "ground_truth": "Apple's total net sales grew from $383,285 million in 2023 to $391,035 million in 2024, approximately 2% growth."
+  }
+]

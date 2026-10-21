@@ -1,0 +1,4 @@
+# Tell GitHub to ignore raw data files when calculating language stats
+data/** linguist-vendored
+*.htm linguist-vendored
+*.html linguist-vendored

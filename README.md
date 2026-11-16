@@ -2,6 +2,7 @@
 
 > A RAG system that knows when it doesn't know. Grades every retrieved document, falls back to web search when local knowledge is insufficient, and refuses to hallucinate.
 
+[![CI](https://github.com/jaskaranjjk97/CRAG-Agent/actions/workflows/ci.yml/badge.svg)](https://github.com/jaskaranjjk97/CRAG-Agent/actions/workflows/ci.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.2.60-blueviolet.svg)](https://github.com/langchain-ai/langgraph)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115.6-009688.svg)](https://fastapi.tiangolo.com/)
@@ -26,16 +27,6 @@ This project fixes that by adding a **grading layer** between retrieval and gene
 ## How this compares to naive RAG
 
 On 15 verified questions over 3 SEC filings, this pipeline improves **context precision by 19%** by filtering out irrelevant documents before generation. Full evaluation, methodology, and per-question results are in [`eval/comparison.md`](eval/comparison.md).
-
-## What I can build for you
-
-This project is a template. The same architecture applies to:
-- Chatbots over company documentation (Notion, Confluence, PDFs)
-- Support agents that escalate to humans when needed
-- Analyst tools that answer questions with citations
-- Any RAG system where hallucination is expensive
-
-**Contact:** [jaskaranjandu4u@gmail.com](mailto:jaskaranjandu4u@gmail.com) · [LinkedIn](https://www.linkedin.com/in/jaskaran-singh-0a65b3181) · [Upwork profile](https://www.upwork.com/freelancers/~01aa522afc2d9a802d)
 
 ---
 
@@ -406,6 +397,25 @@ Honest about what this demo doesn't do:
 - **RAGAS has non-determinism** — the LLM-as-judge evaluator varies slightly across runs. We measured this with 3 runs (std ≤ 0.013), but tighter confidence intervals would need 10+.
 - **No authentication** — the API has no auth layer. Production would add JWT or API-key middleware.
 - **English only** — prompts assume English. Multilingual would need per-language few-shot examples.
+
+---
+
+## Related Projects
+
+- [advanced-rerank-rag](https://github.com/jaskaranjjk97/advanced-rerank-rag): multimodal RAG over the Economic Survey of India with vision-enriched tables and cross-encoder reranking.
+- [multimodal-rag-assistant](https://github.com/jaskaranjjk97/multimodal-rag-assistant): multimodal RAG API with type-aware chunking, citation validation and DeepEval.
+
+---
+
+## What I can build for you
+
+This project is a template. The same architecture applies to:
+- Chatbots over company documentation (Notion, Confluence, PDFs)
+- Support agents that escalate to humans when needed
+- Analyst tools that answer questions with citations
+- Any RAG system where hallucination is expensive
+
+**Contact:** [jaskaranjandu4u@gmail.com](mailto:jaskaranjandu4u@gmail.com) · [LinkedIn](https://www.linkedin.com/in/jaskaran-singh-0a65b3181) · [Upwork profile](https://www.upwork.com/freelancers/~01aa522afc2d9a802d)
 
 ---
 
